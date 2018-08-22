@@ -34,3 +34,8 @@ todos.forEach(function(todo){
     p.textContent = todo.text;
     document.querySelector("body").appendChild(p);
 })
+
+
+document.querySelector("button").addEventListener("click", function(event){
+    console.log(event);
+})
