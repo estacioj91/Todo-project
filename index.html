@@ -1,18 +1,28 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <h1>To Do App</h1>
-    <input id = "new-todo" type= "text" placeholder="New To Do"/>
-    <button id= "add-todo">Add To Do</button>
-    <input id ="searchText" type ="text" placeholder="Filter todos"/>
-    <div id = "todos">
 
+    <input id="searchText" type="text" placeholder="Filter todos" />
+    <label>
+        <input type = "checkbox" id ="hide-completed"/>Hide Completed
+    </label>
+    <div id="todos">
     </div>
+    <form id="new-todo">
+        <input type="text" placeholder="task" name="text" />
+        <button>
+            Add Todo
+        </button>
+    </form>
     <script src="js/todo.js"></script>
 </body>
+
 </html>
