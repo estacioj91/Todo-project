@@ -5,15 +5,16 @@ const filters = {
 }
 renderTodos(todos, filters);
 
-document.querySelector("#searchText").addEventListener('input', function (event) {
+document.querySelector("#searchText").addEventListener('input',  (event) => {
     filters.searchText = event.target.value;
     renderTodos(todos, filters);
 })
 document.querySelector("#new-todo").addEventListener(
     "submit",
-    function (event) {
+     (event) =>{
         event.preventDefault();
         todos.push({
+            id: uuidv4(),
             text: event.target.elements.text.value,
             completed: false
         });
@@ -24,7 +25,7 @@ document.querySelector("#new-todo").addEventListener(
     }
 )
 document.querySelector("#hide-completed").addEventListener(
-    "change", function(event){
+    "change", (event)=>{
         filters.hideCompleted = event.target.checked;
         renderTodos(todos,filters);
     }
