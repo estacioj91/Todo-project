@@ -1,3 +1,5 @@
+"use strict"
+
 let todos = getSavedTodos();
 const filters = {
     searchText: "",
@@ -12,16 +14,21 @@ document.querySelector("#searchText").addEventListener('input',  (event) => {
 document.querySelector("#new-todo").addEventListener(
     "submit",
      (event) =>{
-        event.preventDefault();
-        todos.push({
-            id: uuidv4(),
-            text: event.target.elements.text.value,
-            completed: false
-        });
-        saveTodos(todos);
-        renderTodos(todos,filters);
-        //clears form
-        event.target.elements.text.value = ""
+         const text = event.target.elements.text.value.trim();
+         event.preventDefault();
+         if(text.length >0){
+            todos.push({
+                id: uuidv4(),
+                text,
+                completed: false
+            });
+            saveTodos(todos);
+            renderTodos(todos,filters);
+            //clears form
+            event.target.elements.text.value = ""
+         }
+        
+        
     }
 )
 document.querySelector("#hide-completed").addEventListener(
